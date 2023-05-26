@@ -13,6 +13,7 @@ export class Category {
 
   refresh() {
     this.algorithms = listDirectories(this.path)
+      .filter(algorithmName => ['Bellman-Ford\'s Shortest Path', 'Floyd-Warshall\'s Shortest Path', 'Dijkstra\'s Shortest Path'].includes(algorithmName))
       .map(algorithmName => new Algorithm(path.resolve(this.path, algorithmName), algorithmName));
   }
 

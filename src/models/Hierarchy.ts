@@ -21,6 +21,7 @@ export class Hierarchy {
 
   refresh() {
     this.categories = listDirectories(this.path)
+      .filter(categoryName => ['Dynamic Programming', 'Greedy'].includes(categoryName))
       .map(categoryName => new Category(path.resolve(this.path, categoryName), categoryName));
 
     const files: File[] = [];
